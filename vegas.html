@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hotel Recommendation App</title>
+
+        <!-- Include CSS -->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">    
+        <link rel="stylesheet" href="static/fletcher.css">
+        <link rel="stylesheet" href="static/jquery.nstSlider.css">
+
+        <!-- Include JS -->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="static/jquery.nstSlider.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+        <script src="static/fletcher.js"></script>
+
+        <!-- Style -->
+
+    </head>
+
+    <body>
+        <div id="header">
+            <!-- <img src="http://www.vegaschatter.com/files/93346/Las_Vegas_Sign.jpg" align="middle"/> -->
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmiVUM9M3fbF0UqimtoeO78RmEPvHhnsn_W_m6jLiE-UDzjGADWw" align="middle"/>
+            <h1>Hotel Recommendation</h1>
+            <h2>(Using sentiment analysis)</h2>
+        </div>
+        <div class="container">
+
+          <div id="nav">
+            <h3>User Sentiment Score:</h3>
+            <!-- <input type="checkbox" name="vehicle" value="Car"> I have a car<br> -->
+            <div class="slider_label">Hotel Rooms</div>
+            <span id="roomLabel" class="slider_label"></span>
+            <div id="roomSlider" class="nstSlider holder_options" data-range_min="1" data-range_max="10" data-cur_min="1">
+              <div class="leftGrip"></div></div>         
+
+            <div class="slider_label">Staff & Service</div>
+            <span id="staffLabel" class="slider_label"></span>
+            <div id="staffSlider" class="nstSlider holder_options" data-range_min="1" data-range_max="10" data-cur_min="1">
+              <div class="leftGrip"></div></div>
+
+            <div class="slider_label">Food & Dining</div>
+            <span id="foodLabel" class="slider_label"></span>
+            <div id="foodSlider" class="nstSlider holder_options" data-range_min="1" data-range_max="10" data-cur_min="1">
+              <div class="leftGrip"></div></div>
+
+            <div class="slider_label">Hotel Amenities</div>
+            <span id="amenLabel" class="slider_label"></span>
+            <div id="amenSlider" class="nstSlider holder_options" data-range_min="1" data-range_max="10" data-cur_min="1">
+              <div class="leftGrip"></div></div>
+
+            <div class="slider_label">Accessibility</div>
+            <span id="accessLabel" class="slider_label"></span>
+            <div id="accessSlider" class="nstSlider holder_options" data-range_min="1" data-range_max="10" data-cur_min="1">
+              <div class="leftGrip"></div></div>
+          </div>
+
+          <div id="section">
+            <script>loadHotels();</script>
+          </div>
+
+        </div>
+        
+        <script>
+          $('#roomSlider').nstSlider({
+              "left_grip_selector": ".leftGrip",
+              "value_changed_callback": function(cause, leftValue, rightValue) {
+                  $(this).parent().find('#roomLabel').text(leftValue);
+                  updateScores(0, leftValue);
+                  //console.log(user_scores);
+              },
+              "user_mouseup_callback": function(leftValue, rightValue, left_grip_moved) {
+                  hotelValidArray();
+                //toggle opacity attribute of images
+                //console.log(user_scores)
+              }
+          });
+
+          $('#staffSlider').nstSlider({
+              "left_grip_selector": ".leftGrip",
+              "value_changed_callback": function(cause, leftValue, rightValue) {
+                  $(this).parent().find('#staffLabel').text(leftValue);
+                  updateScores(1, leftValue);
+                  //console.log(user_scores);
+              },
+              "user_mouseup_callback": function(leftValue, rightValue, left_grip_moved) {
+                  hotelValidArray();
+              }
+          });
+
+          $('#foodSlider').nstSlider({
+              "left_grip_selector": ".leftGrip",
+              "value_changed_callback": function(cause, leftValue, rightValue) {
+                  $(this).parent().find('#foodLabel').text(leftValue);
+                  updateScores(2, leftValue);
+                  //console.log(user_scores);
+              },
+              "user_mouseup_callback": function(leftValue, rightValue, left_grip_moved) {
+                  hotelValidArray();
+              }
+          });
+
+          $('#amenSlider').nstSlider({
+              "left_grip_selector": ".leftGrip",
+              "value_changed_callback": function(cause, leftValue, rightValue) {
+                  $(this).parent().find('#amenLabel').text(leftValue);
+                  updateScores(3, leftValue);
+                  //console.log(user_scores);
+              },
+              "user_mouseup_callback": function(leftValue, rightValue, left_grip_moved) {
+                  hotelValidArray();
+              }
+          });
+
+          $('#accessSlider').nstSlider({
+              "left_grip_selector": ".leftGrip",
+              "value_changed_callback": function(cause, leftValue, rightValue) {
+                  $(this).parent().find('#accessLabel').text(leftValue);
+                  updateScores(4, leftValue);
+                  //console.log(user_scores);
+              },
+              "user_mouseup_callback": function(leftValue, rightValue, left_grip_moved) {
+                  hotelValidArray();
+              }
+          });
+
+          
+          // Call methods and such...
+          // var highlightMin = Math.random() * 20,
+          //     highlightMax = highlightMin + Math.random() * 80;
+          // $('#roomSlider').nstSlider('highlight_range', highlightMin, highlightMax);
+        </script>
+        
+    </body>

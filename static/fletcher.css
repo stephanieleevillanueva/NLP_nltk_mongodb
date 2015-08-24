@@ -1,0 +1,93 @@
+body {
+	/*background: #000;*/
+	background-image: url("http://2.bp.blogspot.com/-j0Vm9m39-zQ/VCLUn0_yWeI/AAAAAAAABl0/SigvkiSSmzQ/s1600/plain-wallpaper-lite-blue-797791.png");
+	/*background-image: url("http://www.wolfcustomhomes.ca/wp-content/uploads/2013/04/url.png");*/
+	margin: 2px;
+	opacity:1;
+}
+
+img {
+	border-radius: 4px;
+	padding: 2px;
+}
+
+h1 {
+	color: white;
+	font-family: "open sans";
+	opacity: 0.8;
+	margin-bottom: 0px;
+}
+
+h2 {
+	color: white;
+	font-family: "open sans";
+	font-size:20px;
+	opacity: 0.8;
+	margin:0px;
+}
+
+h3 {
+	color: white;
+	font-family: "open sans";
+	font-size:20px;
+	opacity: 0.8;
+	margin-top: 0px;
+}
+
+#header {
+	text-align:center;
+	/*width:1000px;*/
+	padding:5px;
+	margin:30px;
+	margin-bottom:20px;
+	font-style: italic;
+}
+
+#header img {
+  float: middle;
+  width: 150px;
+  height: 80px;
+  background: #555;
+}
+
+#nav {
+    line-height:30px;
+    height:500px;
+    width:300px;
+    float:left;
+    padding:5px;
+    margin-left: 50px; 
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+#section {
+    width:750px;
+    float:left;
+    padding:10px;
+    margin-top: 40px;	 	 
+}
+
+.slider_label {
+	color:#bdbdbd;
+	font-family: "open sans";
+	font-size: 14px;
+}
+
+.holder_options {
+     display:inline-block;
+}
+
+.tooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 120px;                  
+  height: 50px;                 
+  padding: 2px;             
+  font: 12px "open sans";        
+  background: gray;   
+  border: 0px;      
+  border-radius: 8px;           
+  pointer-events: none;         
+}
+
