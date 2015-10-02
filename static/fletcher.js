@@ -116,12 +116,3 @@ function loadHotels(){
       });
 	});
 }
-
-
-
-
-// function getHotelDetails() {
-// 	// Get the data
-// 	
-// 	}
-// }
