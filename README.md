@@ -6,8 +6,10 @@ Utilizing NLP/nltk to build a simple vegas hotel recommendation app using guest 
   <dt>static</dt>
   <dd>contains <b>.json</b>, <b>.csv</b>, <b>.css</b> and <b>.js</b> files used to create the web app.</dd>
   * vegas.json  
+    contains hotels' websites and thumbnails
       
   * final.json  
+    
       
   * hotels.csv  
         
