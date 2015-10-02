@@ -27,9 +27,7 @@ Utilizing NLP/nltk to build a simple vegas hotel recommendation app using guest 
     js file containing functions used in the app  
 
 <dl>
-  <dt>vegas.html</dt>
-  <dd></dd>
-
+  <dt>vegas.html</dt>  <dd>Vegas hotel recommender app prototype</dd>
 <dl>
   <dt>vegas.py</dt>
-  <dd></dd>
+  <dd>Flask server that runs vegas.html</dd>
